@@ -13,14 +13,14 @@ public class Country {
     public static HashMap<String, ArrayList <Countries>> country0 = new HashMap<>();
 
     public static void main(String[] args) throws FileNotFoundException {
-        String[] names = {""};
-        File F = new File("Countries.txt");
-        Scanner Filescanner = new Scanner(F);
-        while (Filescanner.hasNext()) {
-            String File = Filescanner.nextLine();
-            String[] List = File.split("\\|");
-            String theAbreviation = List[0];
-            String theName = List[1];
+        //String[] names = {""};
+        File f = new File("Countries.txt");
+        Scanner fileScanner = new Scanner(f);
+        while (fileScanner.hasNext()) {
+            String file = fileScanner.nextLine();
+            String[] list = file.split("\\|");
+            String theAbreviation = list[0];
+            String theName = list[1];
             Countries country = new Countries();
             country.abreviation = theAbreviation;
             country.name = theName;
@@ -44,6 +44,7 @@ public class Country {
             if (firstLetter.equalsIgnoreCase("/exit")) {
                 deezNutz = false;
             }
+
         }
     }
 }
