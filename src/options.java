@@ -7,7 +7,4 @@ public class options {
     //imports and parses countries.txt into hashmap called countries
     //static void fileImport (throws fi)
 
-
-
-
 }
