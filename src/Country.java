@@ -11,26 +11,35 @@ import java.util.Scanner;
 public class Country {
 
     public static HashMap<String, ArrayList <Countries>> country0 = new HashMap<>();
-    public static JsonSerializer serializer;
 
     public static void main(String[] args) throws IOException {
         //String[] names = {""};
         File f = new File("Countries.txt");
         Scanner fileScanner = new Scanner(f);
-
         readFile(fileScanner);
+
+
         boolean deezNutz = true;
-        while (deezNutz){
+        String firstLetter = null;
+        while (deezNutz) {
             System.out.println("Enter a letter");
             Scanner scanner = new Scanner(System.in);
-            String firstLetter = scanner.nextLine();
+            firstLetter = scanner.nextLine();
             System.out.println(country0.get(firstLetter));
             if (firstLetter.equalsIgnoreCase("/exit")) {
                 deezNutz = false;
             }
-
-
         }
+
+        ArrayList<Countries> countriesArray;
+        countriesArray = country0.get(firstLetter);
+        File f2 = new File(firstLetter + "_countries.txt");
+        FileWriter writeText = new FileWriter(f2);
+        for (Countries myCountry : countriesArray){
+            writeText.write(myCountry.toString()+"\n");
+        }
+        writeText.close();
+
 
         JsonSerializer serializer = new JsonSerializer();
         CountryWrapper countryWrapper = new CountryWrapper();
