@@ -4,21 +4,17 @@ import java.util.ArrayList;
  * Created by brettgrist on 9/23/16.
  */
 public class CountryWrapper {
-        ArrayList<Country> country;
+        ArrayList<Countries> country;
 
-        CountryWrapper(){
-
-        }
-
-        public CountryWrapper(ArrayList<Country> country) {
+        public CountryWrapper(ArrayList<Countries> country) {
             this.country = country;
         }
 
-        public ArrayList<Country> getCountry() {
+        public ArrayList<Countries> getCountry() {
             return country;
         }
 
-        public void setCountry(ArrayList<Country> country) {
+        public void setCountry(ArrayList<Countries> country) {
             this.country = country;
         }
     }

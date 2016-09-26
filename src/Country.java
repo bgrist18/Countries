@@ -19,15 +19,15 @@ public class Country {
         readFile(fileScanner);
 
 
-        boolean deezNutz = true;
+        boolean Nations = true;
         String firstLetter = null;
-        while (deezNutz) {
+        while (Nations) {
             System.out.println("Enter a letter");
             Scanner scanner = new Scanner(System.in);
             firstLetter = scanner.nextLine();
             System.out.println(country0.get(firstLetter));
             if (firstLetter.equalsIgnoreCase("/exit")) {
-                deezNutz = false;
+                Nations = false;
             }
         }
 
@@ -42,7 +42,7 @@ public class Country {
 
 
         JsonSerializer serializer = new JsonSerializer();
-        CountryWrapper countryWrapper = new CountryWrapper();
+        CountryWrapper countryWrapper = new CountryWrapper(countriesArray);
         String json = serializer.serialize(countryWrapper);
         FileWriter fw = new FileWriter(f);
         fw.write(json);
@@ -68,7 +68,7 @@ public class Country {
                     theCountries = new ArrayList<>();
                     country0.put(myCountry.name.substring(0, 1), theCountries);
                 }
-                theCountries.add(myCountry);
+
             }
         }
     }
